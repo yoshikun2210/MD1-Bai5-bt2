@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+<tr>
+    <td>Amount</td>
+    <td>From Currency</td>
+    <td>To Currency</td>
+    <td></td>
+</tr>
+<tr>
+    <td><input type="text" id="nhaptien"></td>
+    <td>
+        <select name="" id="so1">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+    </td>
+    <td>
+        <select name="" id="so2">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+    </td>
+    <td>
+        <button onclick="chuyenTien()">Đổi</button>
+    </td>
+</tr>
+
+</table>
+<h1>Số tiền là: <span id="hienthi"></span></h1>
+
+
+<script>
+    function chuyenTien(){
+        let nhapso=+document.getElementById('nhaptien').value;
+        let select1=document.getElementById('so1').value;
+        let select2=document.getElementById('so2').value;
+        let tienvnd=nhapso*23000;
+        let tienusd=nhapso/23000;
+        if (select1==select2){
+            document.getElementById('hienthi').innerHTML=nhapso
+        }
+        if (select1=="VND" && select2=="USD"){
+            document.getElementById('hienthi').innerHTML=tienusd
+        }
+        if (select1=="USD" && select2=="VND"){
+            document.getElementById('hienthi').innerHTML=tienvnd
+        }
+
+
+
+
+
+    }
+</script>
+</body>
+</html>
